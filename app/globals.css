@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  --background: #0a0f1e;
+  --foreground: #f1f5f9;
+  --card: #1a2235;
+  --card-foreground: #f1f5f9;
+  --card-alt: #111827;
+  --primary: #00e5ff;
+  --primary-foreground: #0a0f1e;
+  --secondary: #7c3aed;
+  --secondary-foreground: #f1f5f9;
+  --muted: #64748b;
+  --muted-foreground: #64748b;
+  --accent: #00e5ff;
+  --accent-foreground: #0a0f1e;
+  --destructive: #ef4444;
+  --success: #22c55e;
+  --warning: #fbbf24;
+  --orange: #f97316;
+  --border: rgba(255, 255, 255, 0.07);
+  --input: rgba(255, 255, 255, 0.07);
+  --ring: #00e5ff;
+  --radius: 1rem;
+}
+
+@theme inline {
+  --font-sans: 'var(--font-outfit)', 'Sarabun', system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes growBar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes strokeDash {
+  from {
+    stroke-dashoffset: 251;
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out both;
+}
+
+.animate-grow-bar {
+  animation: growBar 0.6s ease-out both;
+  transform-origin: bottom;
+}
+
+.animate-stroke {
+  animation: strokeDash 1s ease-out both;
+}
